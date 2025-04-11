@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -18,7 +17,7 @@ export const HeroSection = () => {
           <div className="absolute -inset-x-20 -top-6 -bottom-6 bg-primary/10 blur-3xl" />
           <h1 className="relative text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
             Interactive{" "}
-            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent pr-0.5">
               Simulations
             </span>{" "}
             Lab
