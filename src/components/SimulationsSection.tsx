@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Atom, Braces, Dna, Microscope, Waves } from "lucide-react";
+import { ArrowRight, Atom } from "lucide-react";
 import {
   Card,
   CardDescription,
@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { simulations } from "@/constants/simulaions";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,54 +33,6 @@ const itemVariants = {
     },
   },
 };
-
-const simulations = [
-  {
-    id: "physics",
-    title: "Physics Simulator",
-    description:
-      "Explore gravity, momentum, and collisions in an interactive environment.",
-    icon: <Atom className="h-8 w-8 text-primary" />,
-    image: "/placeholder.svg?height=200&width=400",
-    to: "/simulations/physics",
-  },
-  {
-    id: "biology",
-    title: "Cellular Automaton",
-    description:
-      "Watch cellular patterns emerge and evolve based on simple rules.",
-    icon: <Microscope className="h-8 w-8 text-primary" />,
-    image: "/placeholder.svg?height=200&width=400",
-    to: "/simulations/cellular",
-  },
-  {
-    id: "genetics",
-    title: "Genetic Algorithm",
-    description:
-      "Witness evolution in action as algorithms find optimal solutions.",
-    icon: <Dna className="h-8 w-8 text-primary" />,
-    image: "/placeholder.svg?height=200&width=400",
-    to: "/simulations/genetic",
-  },
-  {
-    id: "waves",
-    title: "Wave Propagation",
-    description:
-      "Visualize how waves travel through different mediums and interact.",
-    icon: <Waves className="h-8 w-8 text-primary" />,
-    image: "/placeholder.svg?height=200&width=400",
-    to: "/simulations/waves",
-  },
-  {
-    id: "particles",
-    title: "Particle System",
-    description:
-      "Create beautiful particle effects with customizable parameters.",
-    icon: <Braces className="h-8 w-8 text-primary" />,
-    image: "/placeholder.svg?height=200&width=400",
-    to: "/simulations/particles",
-  },
-];
 
 export const SimulationsSection = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
