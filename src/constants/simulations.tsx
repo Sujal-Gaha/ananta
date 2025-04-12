@@ -1,3 +1,4 @@
+import cuid from "cuid";
 import { Atom, Dna, Microscope } from "lucide-react";
 import { JSX } from "react";
 
@@ -12,16 +13,16 @@ export type Simulation = {
 
 export const simulations: Simulation[] = [
   {
-    id: "physics",
-    title: "Epidemic Simulation",
+    id: cuid(),
+    title: "Bouncing Ball Simulation",
     description:
       "Explore gravity, momentum, and collisions in an interactive environment.",
     icon: <Atom className="h-8 w-8 text-primary" />,
     image: "/placeholder.svg?height=200&width=400",
-    to: "/simulations/physics",
+    to: "/simulations/bouncing_ball",
   },
   {
-    id: "biology",
+    id: cuid(),
     title: "Cellular Automaton",
     description:
       "Watch cellular patterns emerge and evolve based on simple rules.",
@@ -30,7 +31,7 @@ export const simulations: Simulation[] = [
     to: "/simulations/cellular",
   },
   {
-    id: "genetics",
+    id: cuid(),
     title: "Genetic Algorithm",
     description:
       "Witness evolution in action as algorithms find optimal solutions.",
