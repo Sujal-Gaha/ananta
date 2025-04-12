@@ -17,7 +17,10 @@ export const BouncingBallPage = () => {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <SimulationNavbar onControlBtnClick={openSimulationControlModal} />
+      <SimulationNavbar
+        title="Physics Simulator: Bouncing Ball"
+        onControlBtnClick={openSimulationControlModal}
+      />
 
       <main className="flex-1 bg-grid-small-white/[0.2] bg-[length:20px_20px] flex justify-center">
         <div className="container py-8">

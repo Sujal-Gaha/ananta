@@ -1,25 +1,30 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Settings } from "lucide-react";
 
 export const SimulationNavbar = ({
+  title,
   onControlBtnClick,
 }: {
+  title: string;
   onControlBtnClick: () => void;
 }) => {
+  const navigate = useNavigate();
+
   return (
     <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur flex items-center justify-center">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" asChild>
-            <Link to="/">
-              <ArrowLeft className="h-5 w-5" />
-              <span className="sr-only">Back to home</span>
-            </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => navigate(-1)}
+            className="cursor-pointer"
+          >
+            <ArrowLeft className="h-5 w-5" />
+            <span className="sr-only">Back to home</span>
           </Button>
-          <h1 className="text-lg font-semibold">
-            Physics Simulator: Bouncing Ball
-          </h1>
+          <h1 className="text-lg font-semibold">{title}</h1>
         </div>
         <Button
           variant="outline"
