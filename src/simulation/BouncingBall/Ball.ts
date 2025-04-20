@@ -1,7 +1,7 @@
 export const BALL_INITIAL_VELOCITY = 0;
 export const BALL_RADIUS = 30;
 export const GRAVITY = 0.3;
-export const BOUNCE_DAMPING = 0.9;
+export const BOUNCE_DAMPING = 0.9; // Damping is the reduction in the amplitude of an oscillation as a result of energy being drained from the system to overcome frictional or other restrictive forces.
 
 export class Ball {
   h: number;
@@ -11,19 +11,15 @@ export class Ball {
   acceleration: number;
   radius: number;
   color: string;
-  ctx: CanvasRenderingContext2D | null;
-
-  private getRandom() {
-    return Math.random();
-  }
+  ctx: CanvasRenderingContext2D;
 
   private getRandomColor() {
     return `hsl(${Math.random() * 60 + 180}, 100%, 50%)`;
   }
 
-  constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D | null) {
-    this.h = this.getRandom() * canvas.width;
-    this.k = this.getRandom() * canvas.height;
+  constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+    this.h = canvas.width / 2;
+    this.k = canvas.height / 2;
     this.velocityX = BALL_INITIAL_VELOCITY;
     this.velocityY = Math.floor(Math.random() * 13) - 6;
     this.radius = BALL_RADIUS;
@@ -63,7 +59,6 @@ export class Ball {
   }
 
   draw() {
-    if (!this.ctx) return;
     this.ctx.beginPath();
     this.ctx.arc(this.h, this.k, this.radius, 0, Math.PI * 2);
     this.ctx.fillStyle = this.color;
