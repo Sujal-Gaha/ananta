@@ -3,4 +3,5 @@ export const ROUTE_PATHS = {
   ABOUT: "/about",
   CONTACT: "/contact",
   SIMULATIONS: "/simulations",
+  BOUNCING_BALL: "/simulations/bouncing_ball",
 };

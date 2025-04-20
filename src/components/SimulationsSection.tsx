@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Atom } from "lucide-react";
-import { simulations } from "@/constants/simulaions";
+import { simulations } from "@/constants/simulations";
 import { SimulationCard } from "./SimulationCard";
 
 const containerVariants = {

@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Simulation } from "@/constants/simulaions";
+import { Simulation } from "@/constants/simulations";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
